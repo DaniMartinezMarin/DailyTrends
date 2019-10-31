@@ -1,0 +1,29 @@
+
+#pp-logo{
+    color:blue; 
+    
+}
+
+#title-page{
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+#centro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description{
+    font-style: normal;
+    font-weight: normal;
+}
+
+.tam-img-right{
+    width: 92.5%;
+}
+
+.tam-img-left{
+    width: 86.5%;
+}

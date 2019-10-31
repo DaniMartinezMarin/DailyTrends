@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>DailyTrends</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div id="title-page" class="page-header">
+                <h1>DailyTrends <small>The best news</small></h1>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <?php 
+                            echo '<ul class="list-group">';
+                            echo '<h2 id="centro">El&nbsp;<a id="pp-logo">PP</a>aís</h2>';
+
+                            foreach($datos['pais'] as $dato)
+                            {
+                                echo '<li class="list-group-item">
+                                        <a href="'. $dato['link'] .'">' . $dato['title'] . '</a> <hr>
+                                        <div class="row">
+                                            <div class="col-6"> ' . $dato['description'] . '...</div>
+                                            <div class="col-6">
+                                                <a href="'. $dato['link'] .'"><img class="tam-img-left" src="' . $dato['image'] . '"></a>
+                                            </div>
+                                        </div>
+                                      </li>';
+                            }
+                            echo '</ul>';
+                        ?>
+                    </div>
+                    <div class="col-lg-6">
+                        <?php 
+                            echo '<ul class="list-group">';
+                            echo '<h2 id="centro">El Mundo</h2>';
+                            
+                            foreach($datos['mundo'] as $dato)
+                            {
+                                echo '<li class="list-group-item">
+                                        <a class="description" href="'. $dato['link'] .'">' . $dato['title'] . '</a> <hr>
+                                        <div class="row">
+                                        <div class="col-6 description"> ' . $dato['description'] . '...</div>
+                                            <div class="col-6">
+                                                <a href="'. $dato['link'] .'"><img class="tam-img-right" src="' . $dato['image'] . '"></a>
+                                            </div>
+                                        </div>
+                                      </li>';
+                            }
+                            echo '</ul>';
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
